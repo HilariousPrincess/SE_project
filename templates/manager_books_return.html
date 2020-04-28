@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %} 还书 {% endblock %}
+{% block link %} 
+	<a href="{{ url_for('manager_books')}}"> 返回 </a>
+{% endblock %}
+{% block body %}
+	<h2> 还书 </h2>
+	{% if error %}
+	<div class = error>
+	  <strong>Error : </strong> {{error}}
+	</div>
+	{% endif %}
+	<form action="" method=post>
+	  <dl>
+	    <dt>学号: </dt>
+	    <dd><input type=text name=num size=30> </dd>
+	    <dt>ISBN:</dt>
+	    <dd><input type=text name=ISBN size=30> </dd>
+	  </dl>
+	  <div class=actions>
+	    <input type=submit value="确认">
+	  </div>
+	</form>
+
+{% endblock %} 

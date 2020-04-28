@@ -9,9 +9,7 @@
 {% block body  %}
 	<h2> 用户信息 </h2>
 	{% if user %}
-	<li> 用户名 {{user.user_name}} </li>
-	<li> 学院名 {{user.college}} </li>
-	<li> 学号 {{user.num}} </li>
+	<li> 学号 {{user.user_num}} </li>
 	<li> 邮箱 {{user.email}} </li>
 	{% endif %}
 

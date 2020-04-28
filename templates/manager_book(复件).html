@@ -26,20 +26,19 @@
 	<li> 借阅者学号 {{reader.user_num}}</li>
 	<li> 借阅日期  {{reader.date_borrow}}</li>
 	<li> 还书日期  {{reader.date_return}}</li>
-	<!--
+<!--	
 	{% for r in reader%}
 	  <tr>
 	    <th align="center"> {{r.user_num}}</th>
 	    <th align="center"> {{r.date_borrow}} </th>
 	    <th align="center"> {{r.date_return}}</th>
 	  </tr>
--->
 	<form action="" method=post>
 	  <div class=actions>
 	    <input type=submit value="归还">
 	    </div>
 	</form>
-
+-->
 	{% else %}
 	<li> 无 </li> 
 	{% endif %}
