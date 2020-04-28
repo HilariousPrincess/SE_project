@@ -1,9 +1,4 @@
 BookLibrary
-===========
-
-一个简单图书管理系统
-
-
 ## 搭配环境
  * 输入 sudo apt-get install python-virtualenv 安装virtualenv虚拟机
  * 输入 sudo apt-get install sqlite3 安装sqlite3
@@ -15,7 +10,7 @@ BookLibrary
 
 ## 导入数据
    在项目根目录 输入sqlite3 book.db
- * 进入sqlite3 shell，输入.separator "," 后，再输入 .import books.txt books 
+ * 进入sqlite3 shell，输入.separator "|" 后，再输入 .import books.txt books 
 
 
 ## 特别注意
