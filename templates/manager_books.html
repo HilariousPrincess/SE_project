@@ -2,11 +2,37 @@
 {% block title%} 图书管理 {% endblock %}
 {% block link%} 
 	<a href="{{ url_for('manager')}}"> 返回 </a> | 
-	<a href="{{ url_for('manager_books_add') }}"> 添加 </a> |
+	<a href="{{ url_for('manager_books_add') }}"> 添加新书 </a> |
+	<a href="{{ url_for('manager_books_more') }}"> 现有书籍增加馆藏 </a> |
+	<a href="{{ url_for('manager_books_update') }}"> 更改书目信息 </a> |
+	<a href="{{ url_for('manager_books_return') }}"> 还书 </a> |
 	<a href="{{ url_for('manager_books_delete') }}"> 删除 </a> 
 {%  endblock%}
 {% block body%}
 	<h2> 图书管理 </h2>
+	<h2> 查询 </h2> 
+	{% if error %}
+	<div class=error>
+	  <strong>Errror : </strong> {{error}}
+	</div>
+	{% endif %}  
+	{% if tips %}
+	<div class=tips>
+	  <strong>提示 : </strong> {{tips}}
+	</div>
+	{% endif %}  
+    <div class=actions>
+	  <form action="" method="post">
+	    <dd>
+	      <select name="item">
+		<option value="name"> 书名 </option>
+		<option value="author"> 作者 </option>
+	      </select>
+	      <input type="text" name="query" size="30"> 
+	      <input type="submit" value="查询">
+	    </dd> 
+	  </form>
+	</div>
 	<table width="600" border="1", align="center">
 	  <tr>
 	    <th align="center"> ISBN </th>
@@ -14,7 +40,9 @@
 	    <th align="center"> 作者</th>
 	    <th align="centet"> 出版商 </th>
 	    <th align="center"> 出版时间 </th>	
-	    <th align="center"> 查看信息 </th>
+	    <th align="center"> 总库存 </th>	
+	    <th align="center"> 现有库存</th>	
+	    <!--<th align="center"> 查看信息 </th>-->
 	  </tr>
 	  {% for book in books%}
 	  <tr>
@@ -23,7 +51,9 @@
 	    <th align="center"> {{book.author}}</th>
 	    <th align="centet"> {{book.publish_com}} </th>
 	    <th align="center"> {{book.publish_date}}</th>
-	    <th align="center"> <a href="{{ url_for('manager_book', id=book.book_id)}}"> 点击进入 </a> </th>
+	    <th align="centet"> {{book.total_num}} </th>
+	    <th align="centet"> {{book.present_num}} </th>
+	    <!--<th align="center"> <a href="{{ url_for('manager_book', id=book.book_id)}}"> 点击进入 </a> </th>-->
 	  </tr>
 	  {% endfor %}
 	</table>

@@ -3,6 +3,11 @@
 {% block link %}
   <a href="{{ url_for('manager_login')}}">管理员登录 </a>|
   <a href="{{ url_for('reader_login')}}">读者登录 </a>
+	{% if error %}
+	<div class = error>
+	  <strong>Error : </strong> {{error}}
+	</div>
+	{% endif %}
 {% endblock %}
 
 {% block body %}

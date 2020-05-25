@@ -4,7 +4,7 @@
 	<a href="{{ url_for('manager_books')}}"> 返回 </a>
 {% endblock %}
 {% block body %}
-	<h2> 增添书目 </h2>
+	<h2> 现有书籍增加馆藏 </h2>
 	{% if error %}
 	<div class = error>
 	  <strong>Error : </strong> {{error}}
@@ -19,14 +19,6 @@
 	  <dl>
 	    <dt>ISBN: </dt>
 	    <dd><input type=text name=id size=30> </dd>
-	    <dt>书名:</dt>
-	    <dd><input type=text name=name size=30> </dd>
-	    <dt>作者:</dt>
-	    <dd><input type=text name=author size=30> </dd>
-	    <dt>出版社:</dt>
-	    <dd><input type=text name=company size=30> </dd>
-	    <dt>出版日期:</dt>
-	    <dd><input type=text name=date size=30> </dd>
 	    <dt>导入数目:</dt>
 	    <dd><input type=text name=num size=30> </dd>
 	  </dl>
